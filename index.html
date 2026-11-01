@@ -1,0 +1,10 @@
+<!doctype html>
+<html lang="vi"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>GUGEE • Lợi nhuận</title><link rel="stylesheet" href="./style.css"></head>
+<body><main><header><p>GUGEE VIỆT NAM</p><h1>Máy tính lợi nhuận</h1><p>Điều chỉnh chi phí, so sánh giá lẻ và combo.</p></header>
+<section><h2>Giả định chi phí</h2><p>Đơn vị: đồng. VAT được cộng vào giá vốn sau tăng giá, là chi phí đầu vào không khấu trừ trong mô hình này. Ads tính trên doanh thu.</p>
+<form id="assumptions"></form><button id="reset" type="button">Khôi phục mặc định</button></section>
+<section><h2>Giá sản phẩm</h2><p>Giá 11/10/2026 • Vốn 29/09/2026. Combo 3 để trống cho đến khi nhập giá. Combo gồm cùng một SKU.</p><div id="products" class="grid"></div></section>
+<section><h2>Kết quả theo từng đơn</h2><p>Mỗi dòng giả định toàn bộ số đơn/tháng bán cùng SKU và combo đó. Không cộng các dòng thành tổng doanh nghiệp. Ship shop chịu áp dụng cho mọi đơn.</p>
+<p id="error" role="alert"></p><div class="table"><table><thead><tr><th>Sản phẩm</th><th>Gói</th><th>Doanh thu</th><th>Lãi góp/đơn</th><th>Lãi sau phân bổ/đơn</th><th>Biên sau phân bổ</th><th>Lãi tháng</th><th>Đơn hòa vốn/tháng</th><th>Giá hòa vốn/đơn</th></tr></thead><tbody id="results"></tbody></table></div>
+<p>Lãi góp = doanh thu − vốn gồm VAT − quảng cáo − ship/đóng gói/COD. Lãi sau phân bổ trừ thêm chi phí cố định chia số đơn/tháng.</p></section>
+<footer>Dữ liệu chỉ xử lý trong trình duyệt. Tải lại trang sẽ khôi phục cấu hình.</footer></main><script type="module" src="./app.js"></script></body></html>
