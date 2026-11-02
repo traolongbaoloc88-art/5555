@@ -53,3 +53,12 @@ Mỗi dòng là một kịch bản bán riêng SKU/gói đó trong toàn bộ th
 Combo cùng một SKU. Không làm tròn trung gian; chỉ làm tròn hiển thị tiền.
 Chưa tính hoàn hàng, chiết khấu khác, thuế doanh thu hay cơ cấu đơn hỗn hợp.
 Dữ liệu sửa trên UI chỉ ở bộ nhớ; tải lại sẽ về cấu hình. Không gửi dữ liệu ra ngoài.
+
+
+## Nhập giá Combo 3
+- Nhập giá bán cả gói bằng đồng; giá phải là số hữu hạn lớn hơn 0.
+- Để trống là chưa có giá, không phải 0: ô nhập hướng dẫn bổ sung giá và dòng kết quả hiển thị dấu —.
+- Giá 0, âm hoặc dữ liệu không phải số được báo ngay tại ô nhập; các dòng khác vẫn tính bình thường.
+- Xóa giá sẽ bỏ kết quả cũ. Khôi phục mặc định trả Combo 3 của cả 6 SKU về null.
+- Không tự điền giá lịch sử. Công thức trong profit.js không thay đổi.
+- app.test.js kiểm tra sự kiện nhập, thông báo, trạng thái hỗ trợ đọc màn hình, kết quả và khôi phục bằng DOM giả lập; chạy cùng npm test.
