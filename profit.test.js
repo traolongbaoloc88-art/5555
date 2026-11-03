@@ -3,6 +3,16 @@ import assert from 'node:assert/strict';
 import {calculate} from './profit.js';
 import {config} from './config.js';
 const a=config.assumptions;
+test('Combo 3 từ chối giá không hợp lệ cho cả 6 SKU',()=>{
+ for(const p of config.products){
+   const args={baseCost:p.baseCost,quantity:3};
+   assert.equal(p.prices[2],null);
+   assert.equal(calculate({...args,price:null},a),null);
+   for(const price of [0,-1,NaN,Infinity,-Infinity,undefined,'650000',''])
+     assert.throws(()=>calculate({...args,price},a),RangeError);
+   assert.ok(Number.isFinite(calculate({...args,price:650000},a).netProfit));
+ }
+});
 test('short lẻ: VAT trên vốn sau tăng, phí mỗi đơn, phân bổ cố định',()=>{
  const r=calculate({baseCost:90000,price:249000,quantity:1},a);
  assert.equal(r.goodsCost,108000);assert.equal(r.adCost,62250);
