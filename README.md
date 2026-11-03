@@ -33,6 +33,11 @@ lót lông theo cập nhật riêng gần nhất. Đơn vị VND.
 | Loe | 165.000 | 415.000 | 750.000 |
 
 Combo 3 chưa có giá cập nhật: để null, người dùng nhập trong giao diện; không tự dùng giá lịch sử.
+Nhập tổng giá của 3 chiếc theo đơn vị đồng để thử kịch bản; giá nhập chỉ dùng trong phiên hiện tại, không được coi là giá cập nhật đã xác nhận.
+Ô trống hiển thị hướng dẫn nhập giá và không tính kết quả cho Combo 3 đó.
+Giá phải là số hữu hạn lớn hơn 0; giá lỗi có thông báo cạnh ô nhập và tại dòng kết quả, các dòng hợp lệ vẫn được tính.
+Xóa giá hoặc khôi phục mặc định sẽ đưa Combo 3 về trạng thái chưa nhập.
+Test giao diện trong `app.test.js` kiểm tra các trạng thái thiếu/sai/đúng giá, xóa giá, khôi phục và việc giữ kết quả các gói khác.
 Tăng vốn mặc định 10.000/chiếc (có thể nhập 15.000); ads mặc định 25% (có thể nhập 20–35%).
 VAT 8% là giả định chi phí đầu vào cộng vào vốn sau tăng, không khấu trừ; không phải phép tính thuế đầu ra hay nghĩa vụ thuế.
 Nếu vốn đã gồm VAT hoặc đã gồm khoản tăng, đặt tỷ lệ/khoản tăng tương ứng về 0 để tránh tính hai lần.
